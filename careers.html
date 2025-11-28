@@ -6,11 +6,153 @@
     <title>VAL’S TREAT - Careers</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Add basic CSS for the Careers layout if not in style.css */
+        
+        #policy-hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #careers-content {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .value-points {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .value-points > div {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        
+        .value-points h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .job-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-list li {
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .job-list li:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .job-list h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .value-points {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script defer>
+        // --- SEARCH FUNCTIONALITY ---
+        function setupSearch() {
+            const searchInput = document.getElementById('search-input');
+            const searchForm = document.getElementById('search-form');
+
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); 
+                    const query = searchInput.value.trim();
+                    if (query.length > 0) {
+                        // Redirect to the menu page with the search query
+                        window.location.href = `menu.html?query=${encodeURIComponent(query)}`;
+                    } else {
+                        window.location.href = 'menu.html';
+                    }
+                });
+            }
+        }
+        
+        // --- MOBILE MENU AND SMART SCROLL FIX ---
+        function setupHeader() {
+            const header = document.getElementById('main-header');
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger');
+            
+            // 1. Mobile Menu Toggle
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    nav.classList.toggle('open');
+                });
+            }
+            
+            // 2. Smart Scroll (Hides/shows header on scroll)
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (!header) return;
+                
+                if (window.scrollY > lastScrollY && window.scrollY > 150) {
+                    // Scrolling down, hide the header
+                    header.classList.add('header-hidden');
+                } else if (window.scrollY < lastScrollY) {
+                    // Scrolling up, show the header
+                    header.classList.remove('header-hidden');
+                }
+                lastScrollY = window.scrollY;
+            });
+            
+            // 3. Close menu when clicking a link (mobile usability)
+            document.querySelectorAll('#main-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav && nav.classList.contains('open')) {
+                        nav.classList.remove('open');
+                    }
+                });
+            });
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            setupSearch();
+            setupHeader();
+        });
+    </script>
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="logo"><img src="images/logo.png" alt="VAL’S TREAT Logo"></div>
-        <nav>
+        
+        <button class="hamburger" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -18,7 +160,15 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="careers.html" class="active-link">Careers</a></li> 
             </ul>
-            <a href="https://wa.me/2349012520128?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="cta-button secondary-cta header-cta">Order via WhatsApp</a>
+            
+            <form id="search-form">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search menu...">
+                    <button type="submit" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
         </nav>
     </header>
 
@@ -35,7 +185,7 @@
         <div class="content-wrapper">
             <h2 class="section-heading">Our Culture & Values</h2>
             <p>
-                At Val's Treat, we believe that great food comes from a happy and dedicated team. We foster an environment of respect, continuous learning, and shared passion for culinary excellence. If you are enthusiastic, reliable, and love food, we want to hear from you.
+                At Val's Treat, we believe that great food comes from a happy and dedicated team. We foster an environment of **respect, continuous learning, and shared passion** for culinary excellence. If you are enthusiastic, reliable, and love food, we want to hear from you.
             </p>
 
             <div class="value-points">
@@ -80,6 +230,33 @@
     </section>
 
     <footer>
-        </footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>Val's Treat</h4>
+                <p>Authentic Nigerian flavors, prepared with passion and served with warmth.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +234 901 252 0128</p>
+                <p><i class="fas fa-envelope"></i> order@valstreat.com</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/vals_treat_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 VAL’S TREAT. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
