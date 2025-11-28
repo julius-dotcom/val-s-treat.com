@@ -1170,3 +1170,38 @@ footer ul li a {
     padding-top: 120px; 
     /* ... other styles for contact-hero ... */
 }
+#quality-guarantee {
+    /* Centers the H2 heading */
+    text-align: center; 
+    padding: 60px 20px; /* Example padding */
+}
+.quality-points {
+    display: flex;
+    /* Centers the entire group of points horizontally */
+    justify-content: center; 
+    
+    /* Allows points to wrap on smaller screens */
+    flex-wrap: wrap; 
+    gap: 30px; /* Space between the points */
+    margin-top: 30px;
+}
+
+.point {
+    /* Ensures each point centers its own content (icon, h3, p) */
+    text-align: center; 
+    
+    /* Gives each point a maximum size */
+    max-width: 300px;
+    padding: 20px;
+}
+
+/* Ensure the icons look good */
+.icon {
+    font-size: 2.5rem;
+    display: block; /* Important for vertical spacing */
+    margin-bottom: 10px;
+}
+.quality-points {
+    width: 80%; /* Example: set the container to less than 100% width */
+    margin: 0 auto; /* Centers the block element horizontally */
+}
