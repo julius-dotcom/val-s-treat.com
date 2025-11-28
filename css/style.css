@@ -63,7 +63,7 @@ header .logo {
 }
 
 nav {
-    display:initial;
+    display: flex;
     align-items: center;
 }
 
@@ -170,7 +170,101 @@ nav input[type="search"] {
     color: var(--white);
     margin-bottom: 1rem;
 }
+/* ========================================= */
+/* --- RESPONSIVE NAVBAR STYLES (CORRECTED) --- */
+/* ========================================= */
 
+/* 1. HIDE HAMBURGER BY DEFAULT (DESKTOP) - KEEP THIS */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-red);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* 2. MOBILE MEDIA QUERY (UPDATE THIS SECTION) */
+@media (max-width: 992px) {
+    /* SHOW HAMBURGER */
+    .hamburger {
+        display: block; 
+        z-index: 1001; 
+    }
+
+    /* RESTRUCTURE HEADER FOR MOBILE */
+    #main-header { /* Use the ID */
+        justify-content: space-between; 
+        padding: 1rem 1.5rem; 
+    }
+    
+    /* HIDE THE NAVIGATION BY DEFAULT */
+    #main-nav {
+        display: none;
+        flex-direction: column; 
+        position: fixed;
+        top: 0; 
+        right: 0;
+        width: 70%; 
+        height: 100%;
+        background-color: var(--dark-text); 
+        z-index: 1000;
+        padding-top: 5rem; 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%); 
+    }
+
+    /* SHOW NAVIGATION WHEN 'open' CLASS IS ADDED BY JS */
+    #main-nav.open {
+        display: flex; /* Override display:none */
+        transform: translateX(0); 
+    }
+
+    /* MENU LIST STYLES */
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Add space above search form when menu is open */
+    #search-form {
+        width: 90%; /* Make search bar wider in the menu */
+        margin: 2rem auto; 
+    }
+    
+    /* Ensure search container is full width in the menu */
+    .search-container {
+        width: 100%;
+    }
+
+    /* Remove search bar margin on mobile when open */
+    #main-nav.open #search-form {
+        margin-left: 0; 
+    }
+
+    #main-nav ul li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #main-nav ul li a {
+        padding: 1rem 1.5rem;
+        display: block;
+        color: var(--white); 
+        font-size: 1.1rem;
+    }
+    
+    #main-nav ul li a:hover,
+    #main-nav ul li a.active-link {
+        background-color: var(--primary-red);
+        color: var(--white);
+    }
+}
 /* Delivery & Comfort Section */
 #comfort-delivery {
     padding: 4rem 2rem;

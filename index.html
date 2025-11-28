@@ -61,22 +61,35 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-    <img src="images/logo.png" alt="VAL’S TREAT Logo" width="160" height="160">
-</div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active-link">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <form id="search-form" action="menu.html" method="GET">
+    
+        <header id="main-header"> 
+    <div class="logo">
+        <img src="images/logo.png" alt="VAL’S TREAT Logo" width="160" height="160">
+    </div>
+    
+    <nav id="main-nav"> 
+        <ul>
+            <li><a href="index.html" class="active-link">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <form id="search-form" action="menu.html" method="GET">
+            <div class="search-container">
                 <input type="search" name="query" id="search-input" placeholder="Search dishes...">
-            </form>
-        </nav>
-    </header>
+                <button type="submit" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </nav>
+    
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+    </button>
+</header>
+    
 
     <section id="hero">
         <div class="hero-content">
@@ -223,6 +236,25 @@
             <p>&copy; 2025 VAL’S TREAT. All Rights Reserved.</p>
         </div>
     </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.getElementById('main-nav'); // Targets the <nav id="main-nav">
 
+        hamburger.addEventListener('click', () => {
+            // 1. Toggle the 'open' class on the menu
+            navMenu.classList.toggle('open');
+            
+            // 2. Toggle the icon (bars to times/close)
+            const icon = hamburger.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times'); 
+
+            // 3. Update accessibility attributes
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
+</script>
 </body>
 </html>
