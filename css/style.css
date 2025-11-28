@@ -248,7 +248,7 @@ nav a.active::after {
     padding: 16rem 2rem;
     position: relative;
     overflow: hidden;
-    background-color: rgba(128, 0, 0, 0.7);
+    background-color: rgb(222, 222, 222);
     background-blend-mode: multiply; 
 }
 
@@ -1152,4 +1152,21 @@ footer ul li a {
     footer ul {
         text-align: center;
     }
+}
+/* In css/style.css */
+
+/* 1. Header is fixed at the top */
+#main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* ... other styles for header ... */
+}
+
+/* 2. Push the content down */
+#contact-hero {
+    /* Assuming your header is about 120px tall */
+    padding-top: 120px; 
+    /* ... other styles for contact-hero ... */
 }
