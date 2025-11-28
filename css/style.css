@@ -20,7 +20,11 @@ body {
     background-color: var(--off-white);
     line-height: 1.6;
 }
-
+/* In css/style.css */
+/* Ensures main content is pushed down past the fixed header */
+#hero-section, #menu-section, #policy-hero, #contact-hero, #about-us {
+    padding-top: 120px; /* Adjust if your header height changes */
+}
 /* Typography Reset */
 h1, h2, h3 {
     color: var(--primary-red);
@@ -111,6 +115,20 @@ header .logo, header .logo img {
     height: 80px;
     max-height: 80px; 
     transition: all 0.3s;
+}
+/* In css/style.css */
+
+#main-header {
+    position: fixed; /* Crucial for it to stay at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+#main-header.header-hidden {
+    /* Moves the header up off the screen */
+    transform: translateY(-100%);
 }
 
 nav {
