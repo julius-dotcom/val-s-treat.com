@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> VAL’S TREAT | Authentic Nigerian Cuisine</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <script defer>
+        // Testimonial carousel with fade
+        let current = 0;
+        function showReview(index) {
+            const reviews = document.querySelectorAll('.review');
+            reviews.forEach((r, i) => {
+                r.style.opacity = i === index ? '1' : '0';
+                r.style.zIndex = i === index ? '10' : '1'; /* Ensure current review is on top */
+            });
+        }
+        function nextReview() {
+            const reviews = document.querySelectorAll('.review');
+            current = (current + 1) % reviews.length;
+            reviews.forEach((r, i) => r.style.transition = 'opacity 1s ease-in-out');
+            showReview(current);
+        }
+
+        // --- NEW SEARCH FUNCTIONALITY ---
+        function setupSearch() {
+            const searchInput = document.getElementById('search-input');
+            const searchForm = document.getElementById('search-form');
+
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(event) {
+                    // Stop the form from submitting the traditional way (page refresh)
+                    event.preventDefault(); 
+                    
+                    const query = searchInput.value.trim();
+                    
+                    if (query.length > 0) {
+                        // Redirect to the menu page, appending the query to the URL
+                        // This sends the user to: menu.html?query=dish_name
+                        window.location.href = `menu.html?query=${encodeURIComponent(query)}`;
+                    } else {
+                        // If empty, just redirect to the menu page
+                        window.location.href = 'menu.html';
+                    }
+                });
+            }
+        }
+        // --- END NEW SEARCH FUNCTIONALITY ---
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            showReview(current);
+            // Set interval for carousel rotation
+            setInterval(nextReview, 4000); 
+            
+            // Initialize the new search function
+            setupSearch();
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+    <img src="images/logo.png" alt="VAL’S TREAT Logo" width="160" height="160">
+</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active-link">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <form id="search-form" action="menu.html" method="GET">
+                <input type="search" name="query" id="search-input" placeholder="Search dishes...">
+            </form>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <strong><h1> WELCOME TO <br>VAL’S TREAT</h1></strong>
+            <p>Authentic Nigerian Cuisine. Excellence in Every Bite.</p>
+            <a href="menu.html" class="cta-button">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <section id="cta-banner">
+        <h2>Ready to Taste Tradition? Order Now!</h2>
+        <p>Experience the rich flavours of West Africa with guaranteed freshness and quick delivery.</p>
+        <a href="menu.html" class="cta-button">Start Your Order</a>
+    </section>
+    
+    <section id="comfort-delivery">
+        <h2><span role="img" aria-label="Delivery Truck">🚚</span> Fast Delivery & Comfortable Dining <span role="img" aria-label="Home">🏠</span></h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <h3>Rapid Service</h3>
+                <p>Get your favorite meals delivered hot and fresh, with reliable tracking and speed you can count on.</p>
+            </div>
+            <div class="info-card">
+                <h3>Relaxed Atmosphere</h3>
+                <p>Visit our restaurant and enjoy a comfortable, welcoming space perfect for family and friends.</p>
+            </div>
+        </div>
+        <a href="contact.html" class="cta-button secondary-cta">View Delivery & Location Info</a>
+    </section>
+
+    <section id="quality-guarantee">
+        <h2>Why Choose VAL’S TREAT?</h2>
+        <div class="quality-points">
+            <div class="point">
+                <span role="img" aria-label="Chef Hat" class="icon">👨‍🍳</span>
+                <h3>Authentic Recipes</h3>
+                <p>Traditional Nigerian methods passed down through generations.</p>
+            </div>
+            <div class="point">
+                <span role="img" aria-label="Star" class="icon">🌟</span>
+                <h3>Premium Ingredients</h3>
+                <p>We source the freshest, high-quality ingredients for every meal.</p>
+            </div>
+            <div class="point">
+                <span role="img" aria-label="Heart" class="icon">💖</span>
+                <h3>Customer Satisfaction</h3>
+                <p>Your delight is our priority. We guarantee a perfect dining experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured">
+        <h2>⭐ Chef's Specialties</h2>
+        <div class="dish-grid">
+            
+            <div class="dish-card">
+                <img src="images/Rice & Stew with Dodo.png" alt="Jollof Rice">
+                <div class="dish-content">
+                    <h3>Rice & Stew with Dodo</h3>
+                    <p>Our signature dish—rich tomato base, subtle smoke, and perfect texture.</p>
+                    <a href="menu.html#jollof">View Details</a>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="images/Suya Skewers.jpg" alt="Suya Skewers">
+                <div class="dish-content">
+                    <h3>Authentic Beef Suya</h3>
+                    <p>Perfectly grilled skewers seasoned with traditional kuli-kuli spices.</p>
+                    <a href="menu.html#suya">View Details</a>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <img src="images/Rich Egusi Soup.jpg" alt="Egusi Soup">
+                <div class="dish-content">
+                    <h3>Rich Egusi Soup</h3>
+                    <p>Ground melon seed soup with your choice of protein and pounded yam.</p>
+                    <a href="menu.html#egusi">View Details</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="reviews-container">
+            <div class="review">
+                <p>"The best jollof rice I've ever had! Absolutely delicious and consistently perfect!"</p>
+                <span class="reviewer">- Ada, Lagos</span>
+            </div>
+            <div class="review">
+                <p>"Amazing service and tasty dishes. Highly recommend VAL’S TREAT to everyone!"</p>
+                <span class="reviewer">- Chinedu, Abuja</span>
+            </div>
+            <div class="review">
+                <p>"I keep coming back for their white rice and stew. Simply perfect and true to tradition."</p>
+                <span class="reviewer">- Fatima, Port Harcourt</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <h3>Join Our Treat List!</h3>
+        <p>Sign up for exclusive offers, new menu alerts, and special event invitations.</p>
+        <form>
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            
+            <div>
+                <h4>Contact Us</h4>
+                <p>Email: info@valstreat.com</p>
+                <p>Phone: +234 901 252 0128</p>
+                <p style="margin-top:1rem;">Mon - Sat: 8am - 9pm</p>
+                <p style="margin-top:1rem;">Closed on Sundays</p>
+            </div>
+            
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="https://www.instagram.com/vals_treat_/" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 VAL’S TREAT. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

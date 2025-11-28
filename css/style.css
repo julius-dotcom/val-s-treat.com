@@ -1,0 +1,1704 @@
+/* Define Variables for Professional Consistency */
+:root {
+    --primary-red: #800000; /* Deep Maroon Red */
+    --secondary-red: #d32f2f; /* Brighter Red for accents */
+    --white: #ffffff;
+    --off-white: #fcfcfc;
+    --dark-text: #333;
+    --light-text: #f0f0f0;
+}
+
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: var(--dark-text);
+    /* Corrected path assumption: Go up from /css/ to access /images/ */
+    background: url('../images/restaurant-background-texture.jpg') repeat fixed;
+    background-color: var(--off-white);
+    line-height: 1.6;
+}
+
+/* Typography Reset */
+h1, h2, h3 {
+    color: var(--primary-red);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* --- 1. Header and Navigation (Desktop) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-red);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .logo img {
+    width: 160px;
+    height: 160px;
+    max-height: 160px; 
+    transition: all 0.3s;
+}
+
+header .logo {
+    width: 160px;
+    height: 160px;
+}
+
+nav {
+    display:initial;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover {
+    color: var(--white);
+    border-bottom: 3px solid var(--secondary-red);
+}
+
+.active-link {
+    color: var(--white) !important;
+    border-bottom: 3px solid var(--white);
+}
+
+nav input[type="search"] {
+    margin-left: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-red);
+    border-radius: 20px;
+    outline: none;
+    width: 150px;
+}
+
+/* Buttons and CTAs */
+.cta-button {
+    background-color: var(--white);
+    color: var(--primary-red);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-red);
+    color: var(--white);
+}
+
+.secondary-cta {
+    background-color: var(--secondary-red);
+    color: var(--white);
+    border-radius: 5px;
+}
+
+/* Hero Section (Home Page) */
+#hero {
+    background: url('../images/vals-treat-exterior.png') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 16rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #f2f0f0;
+    background-blend-mode: multiply; 
+}
+
+.hero-content {
+    background: rgba(128, 0, 0, 0.7); 
+    padding: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 10s infinite alternate;
+}
+
+#hero h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 8px #000;
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+}
+
+/* CTA Banner */
+#cta-banner {
+    background-color: var(--secondary-red);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+#cta-banner h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+/* Delivery & Comfort Section */
+#comfort-delivery {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: var(--white);
+    border-bottom: 3px solid #f0f0f0;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.info-card {
+    flex: 1;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Quality Guarantee Section */
+#quality-guarantee {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--off-white);
+}
+
+.quality-points {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+
+.point {
+    flex: 1;
+    text-align: center;
+}
+
+.point .icon {
+    font-size: 3rem;
+    color: var(--primary-red);
+}
+
+.point h3 {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--secondary-red);
+}
+
+.point p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Featured Dishes Section (Home Page) */
+#featured {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--white);
+}
+
+#featured h2 {
+    border-bottom: 2px solid var(--secondary-red);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 3rem;
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dish-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.dish-content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.dish-content a {
+    color: var(--secondary-red);
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* Reviews Section */
+#reviews {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--off-white);
+}
+
+.reviews-container {
+    position: relative;
+    height: 150px;
+}
+
+.review {
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+    font-style: italic; 
+    max-width: 700px; 
+    margin: 0 auto 1rem; 
+    font-size: 1.1rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.reviewer {
+    font-weight: bold; 
+    color: var(--primary-red);
+    display: block;
+    margin-top: 10px;
+}
+
+/* Newsletter Section */
+#newsletter {
+    padding: 3rem 2rem;
+    background-color: var(--primary-red);
+    color: var(--white);
+    text-align: center;
+}
+
+#newsletter h3 {
+    color: var(--white);
+}
+
+#newsletter form {
+    display: flex;
+    justify-content: center;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#newsletter input[type="email"] {
+    padding: 0.75rem; 
+    border: none; 
+    border-radius: 5px 0 0 5px; 
+    width: 70%;
+}
+
+#newsletter button {
+    background-color: var(--secondary-red);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#newsletter button:hover {
+    background-color: #b71c1c;
+}
+
+/* --- 2. Footer (Desktop) --- */
+footer {
+    padding: 3rem 2rem;
+    background-color: #222;
+    color: var(--light-text);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content h4 {
+    color: var(--secondary-red);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li a {
+    color: #ccc;
+    line-height: 2;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1rem;
+    opacity: 0.8;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    width: 25px;
+    text-align: center;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--secondary-red);
+    border-color: var(--secondary-red);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+}
+
+/* --- Menu Page Specific Styles --- */
+
+/* Menu Hero Section */
+#menu-hero {
+    background: url('../images/menu\ background.png') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    background-color: rgba(212, 204, 204, 0.75); 
+    background-blend-mode: multiply; 
+}
+
+.menu-hero-content {
+    background: none; 
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#menu-hero h1 {
+    font-size: 3rem;
+    color: var(--white);
+    text-shadow: 1px 1px 4px #000;
+}
+
+/* Filter Bar */
+#filter-bar {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--white);
+    border-bottom: 2px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn {
+    background-color: #f0f0f0;
+    color: var(--dark-text);
+    border: 1px solid #ddd;
+    padding: 0.5rem 1.5rem;
+    /* Added bottom margin for better wrapping on mobile */
+    margin: 0 5px 10px 5px; 
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-red);
+    color: var(--white);
+    border-color: var(--primary-red);
+}
+
+
+/* --- 3. Menu Layout and Item Styling (Mobile Friendly Grid) --- */
+#menu-sections {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.menu-category {
+    padding: 4rem 2rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
+}
+
+.category-title {
+    border-bottom: 3px solid var(--primary-red);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* 3A. Grid Container (The Mobile Hero) */
+.menu-grid {
+    display: grid;
+    /* CRITICAL LINE for responsiveness: Ensures 1 column on mobile, 2+ on desktop/tablet */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+}
+
+/* 3B. Menu Item Structure */
+.menu-item {
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background-color: white; 
+    overflow: hidden;
+    transition: transform 0.2s;
+    max-width: 100%; /* Safety measure for mobile */
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 3C. Image Styling */
+.menu-item.has-image img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+/* 3D. Item Details (Flexbox for button alignment) */
+.item-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.item-name {
+    margin-top: 0;
+    font-size: 1.25em;
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.item-desc {
+    flex-grow: 1; /* Pushes the order link to the bottom */
+    margin-bottom: 15px; 
+    color: #555;
+}
+
+.item-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--secondary-red);
+    margin: 0.5rem 0 1rem;
+}
+
+/* Simple Items (Drinks, some sides) */
+.menu-item.simple-item {
+    display: block; /* Override Flexbox column for a simpler look */
+    border-left: 5px solid var(--primary-red);
+    height: auto;
+}
+
+/* WhatsApp Order Button (Link) Style */
+.order-link {
+    background-color: #25D366; 
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: block; 
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+.order-link:hover {
+    background-color: #1DA851; 
+}
+
+/* ---------------------------------------------------- */
+/* --- 4. MOBILE FRIENDLY MEDIA QUERIES (Overrides) --- */
+/* ---------------------------------------------------- */
+
+@media (max-width: 992px) {
+    /* Adjust spacing for medium-sized screens (tablets) */
+    .quality-points, .info-cards {
+        gap: 2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* --- Header Overrides --- */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 1rem 1rem;
+    }
+
+    header .logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    header .logo img {
+        width: 120px;
+        height: 120px;
+        max-height: 120px;
+    }
+    
+    /* Navigation: Hide the main links on smaller screens */
+    nav ul {
+        display: none; 
+    }
+
+    /* Search Input: Make it fill the available space below the logo */
+    nav {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    nav input[type="search"] {
+        width: calc(100% - 2rem); /* Full width minus padding */
+        margin-left: 0;
+    }
+
+    /* --- General Section Adjustments --- */
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Stack info cards and quality points vertically */
+    .info-cards, .quality-points {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: left;
+    }
+    
+    .info-card {
+        padding: 1rem;
+    }
+    
+    /* --- Footer Overrides --- */
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-content > div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content ul {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Remove the default padding on sections to maximize screen width */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Ensure padding for menu categories is maintained */
+    .menu-category {
+        padding: 2rem 1rem 1rem;
+    }
+}
+/* ========================================= */
+/* --- 0. VARIABLES AND BASE STYLES --- */
+/* ========================================= */
+:root {
+    --primary-red: #800000; /* Deep Maroon Red */
+    --secondary-red: #d32f2f; /* Brighter Red for accents */
+    --white: #ffffff;
+    --off-white: #fcfcfc;
+    --dark-text: #333;
+    --light-text: #f0f0f0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: var(--dark-text);
+    /* Corrected path assumption for background texture */
+    background: url('../images/restaurant-background-texture.jpg') repeat fixed;
+    background-color: var(--off-white);
+    line-height: 1.6;
+}
+
+/* Typography Reset */
+h1, h2, h3 {
+    color: var(--primary-red);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Buttons and CTAs */
+.cta-button {
+    background-color: var(--white);
+    color: var(--primary-red);
+    padding: 0.75rem 1.5rem; /* Slightly smaller for header use */
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-red);
+    color: var(--white);
+}
+
+.secondary-cta {
+    background-color: var(--secondary-red);
+    color: var(--white);
+}
+
+/* WhatsApp Order Button (Link) Style */
+.order-link {
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: block; 
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+.order-link:hover {
+    background-color: #1DA851; 
+}
+
+
+/* ========================================= */
+/* --- 1. HEADER AND NAVIGATION (DESKTOP) --- */
+/* ========================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-red);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .logo img {
+    width: 160px;
+    height: 160px;
+    max-height: 160px; 
+    transition: all 0.3s;
+}
+
+header .logo {
+    width: 160px;
+    height: 160px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover {
+    color: var(--white);
+    border-bottom: 3px solid var(--secondary-red);
+}
+
+.active-link {
+    color: var(--white) !important;
+    border-bottom: 3px solid var(--white);
+}
+
+/* ========================================= */
+/* --- 2. MENU SPECIFIC STYLES (GRID) --- */
+/* ========================================= */
+#menu-sections {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.menu-category {
+    padding: 4rem 2rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
+}
+
+.category-title {
+    border-bottom: 3px solid var(--primary-red);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Grid Container */
+.menu-grid {
+    display: grid;
+    /* Responsive Grid: 1 column on mobile, 2+ on desktop/tablet */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    padding: 10px;
+}
+
+/* Menu Item Structure (Flexbox for height consistency) */
+.menu-item {
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background-color: white; 
+    overflow: hidden;
+    transition: transform 0.2s;
+    max-width: 100%;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Item Details (Pushes link to bottom) */
+.item-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.item-name {
+    font-size: 1.25em;
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.item-desc {
+    flex-grow: 1; 
+    margin-bottom: 15px; 
+    color: #555;
+}
+
+.item-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--secondary-red);
+    margin: 0.5rem 0 1rem;
+}
+
+/* Simple Items (Drinks) */
+.menu-item.simple-item {
+    display: block; 
+    border-left: 5px solid var(--primary-red);
+    height: auto;
+}
+
+/* ========================================= */
+/* --- 3. ABOUT US SECTION STYLING --- */
+/* ========================================= */
+
+#about-us {
+    padding-bottom: 5rem;
+}
+
+/* About Hero Banner */
+.about-hero {
+    /* Using background-image property for flexibility with uploaded image */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 10rem 2rem;
+    position: relative;
+    /* Dark overlay for contrast */
+    background-color: rgba(128, 0, 0, 0.75); 
+    background-blend-mode: multiply; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-hero-content h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 8px #000;
+    margin-bottom: 1rem;
+}
+
+.about-hero-content .lead-text {
+    font-size: 1.35rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Main Content Wrapper */
+.about-content-wrapper {
+    max-width: 1100px;
+    margin: -50px auto 0; /* Pull content up over the hero banner for effect */
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.section-heading {
+    text-align: center;
+    margin: 3rem auto 1.5rem;
+    border-bottom: 2px solid var(--secondary-red);
+    display: table; /* Centers the border under the text */
+    padding-bottom: 5px;
+}
+
+/* Mission & Vision Block (Flexbox/Grid) */
+.mission-vision {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.mission, .vision {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--off-white);
+    border: 1px solid #eee;
+}
+
+.mission-vision h2 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Separator */
+.separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--primary-red), rgba(0, 0, 0, 0));
+    margin: 4rem 0;
+}
+
+/* History Timeline */
+.history-timeline {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.timeline-item {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-red);
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.timeline-item h3 {
+    color: var(--secondary-red);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item i {
+    margin-right: 5px;
+    color: var(--primary-red);
+}
+
+.highlight-red {
+    border-top-color: var(--secondary-red);
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    background-color: var(--off-white);
+    border-radius: 8px;
+}
+
+
+/* ========================================= */
+/* --- 4. FOOTER (DESKTOP) --- */
+/* ========================================= */
+footer {
+    padding: 3rem 2rem;
+    background-color: #222;
+    color: var(--light-text);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-content h4 {
+    color: var(--secondary-red);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li a {
+    color: #ccc;
+    line-height: 2;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1rem;
+    opacity: 0.8;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    width: 25px;
+    text-align: center;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--secondary-red);
+    border-color: var(--secondary-red);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+}
+
+
+/* ========================================= */
+/* --- 5. MOBILE FRIENDLY MEDIA QUERIES --- */
+/* ========================================= */
+
+/* Tablet and Smaller Desktop Adjustments */
+@media (max-width: 992px) {
+    /* About Us specific adjustments */
+    .about-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero-content .lead-text {
+        font-size: 1.15rem;
+    }
+    
+    .footer-content {
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        flex-basis: 45%; /* Two columns on tablet */
+    }
+}
+
+
+/* Mobile Phone Adjustments */
+@media (max-width: 768px) {
+    /* --- Header Overrides --- */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 1rem 1rem;
+    }
+
+    header .logo, header .logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Navigation: Hide main links and center the CTA on mobile */
+    nav ul {
+        display: none; 
+    }
+
+    nav {
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    /* --- General Layout --- */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* --- About Us Overrides --- */
+    .about-hero {
+        padding: 6rem 1rem;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .about-content-wrapper {
+        padding: 1.5rem;
+        margin-top: -30px; 
+    }
+
+    /* Stack Mission/Vision and Timeline vertically */
+    .mission-vision, .history-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .timeline-item {
+        border-top: none;
+        border-left: 5px solid var(--primary-red);
+        text-align: left;
+    }
+    
+    .highlight-red {
+        border-left-color: var(--secondary-red);
+    }
+    
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
+    /* --- Footer Overrides --- */
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        flex-basis: 100%; /* Single column */
+        text-align: center;
+    }
+    
+    .footer-content h4 {
+        border-bottom: none; /* Remove border for cleaner mobile look */
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Ensure list items are centered in the footer */
+    footer ul {
+        text-align: center;
+    }
+}
+  /* ========================================= */
+/* --- 0. VARIABLES AND BASE STYLES --- */
+/* (Ensure your variables :root {...} are at the top of your file) */
+/* ========================================= */
+
+/* ... (Your existing header, body, and general styles) ... */
+
+
+/* ========================================= */
+/* --- CONTACT PAGE SPECIFIC STYLING (REFINED) --- */
+/* ========================================= */
+
+/* Contact Hero Banner */
+#contact-hero {
+    /* Using a dark, clean image or color blend for professionalism */
+    background: url('../images/jollof-menu-hero.jpg') center/cover no-repeat;
+    background-color: var(--primary-red);
+    background-blend-mode: multiply;
+    color: var(--white);
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#contact-hero h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.lead-text {
+    font-size: 1.35rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+/* Main Content Layout (Details and Form side-by-side) */
+#contact-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.contact-details-wrapper {
+    display: flex;
+    gap: 3rem;
+    /* Clean white background for the whole section */
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    /* Subtle, classic shadow for depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.details-block {
+    flex: 40%; /* Dedicate less space to the details, more to the form */
+    padding: 1.5rem;
+    border-right: 2px solid var(--off-white); /* Subtle separation line */
+}
+
+.form-block {
+    flex: 60%;
+    padding: 1.5rem;
+}
+
+.details-block h2, .form-block h2 {
+    color: var(--primary-red);
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--secondary-red);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 2rem;
+}
+
+/* Individual Info Items */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.info-item i {
+    font-size: 1.8rem; /* Larger icon */
+    margin-right: 1.5rem;
+    color: var(--secondary-red);
+    padding-top: 5px;
+    width: 35px;
+    text-align: center;
+}
+
+.info-item h3 {
+    color: var(--dark-text);
+    font-size: 1.25rem; /* Larger heading */
+    margin-bottom: 0.3rem;
+}
+
+.info-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Dedicated WhatsApp CTA Style */
+.whatsapp-cta {
+    display: inline-block;
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-cta:hover {
+    background-color: #1DA851;
+}
+
+.whatsapp-cta i {
+    color: var(--white);
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Social Links Refinement */
+.social-title {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--secondary-red);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.social-links-contact {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 10px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.social-btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    color: var(--white);
+    padding: 0; /* Override info-item i */
+}
+
+.social-btn.instagram { background-color: #C13584; }
+.social-btn.facebook { background-color: #1877F2; }
+.social-btn.twitter { background-color: #1DA1F2; }
+
+.social-btn:hover {
+    opacity: 0.8;
+    color: var(--white); /* Prevent text color change */
+}
+
+/* Contact Form Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600; /* Slightly heavier font */
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+    font-size: 1.05rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc; /* Lighter border */
+    border-radius: 8px; /* Slightly more rounded corners */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-red);
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 0, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Location Map */
+#location-map {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--off-white);
+}
+
+#location-map h2 {
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--secondary-red);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 2rem;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- MOBILE RESPONSIVENESS FOR CONTACT PAGE --- */
+@media (max-width: 992px) {
+    #contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-details-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .details-block {
+        border-right: none;
+        border-bottom: 2px solid var(--off-white); /* Add separation line at bottom */
+        padding-bottom: 2rem;
+    }
+    
+    #contact-content {
+        padding: 0 1rem;
+    }
+    
+    .social-links-contact {
+        justify-content: center; /* Center buttons on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    #contact-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-details-wrapper {
+        padding: 1rem;
+        margin: 2rem 1rem;
+    }
+    
+    .info-item {
+        flex-direction: column; /* Stack icon and text for better vertical flow */
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+    
+    .info-item i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .info-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .whatsapp-cta {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .social-links-contact {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-btn {
+        justify-content: center;
+    }
+    
+    .map-container {
+        padding: 0 1rem;
+    }
+}
+/* ========================================= */
+/* --- 4. SUPPLEMENTARY PAGES STYLING (FAQ, CAREERS, PRIVACY) --- */
+/* ========================================= */
+
+/* Hero Banner for Policy/Text pages */
+#policy-hero {
+    background: url('../images/menu\ background.png') center/cover no-repeat;
+    background-color: var(--primary-red);
+    background-blend-mode: multiply;
+    color: var(--white);
+    text-align: center;
+    padding: 6rem 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#policy-hero h1 {
+    color: var(--white);
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Common Content Wrapper */
+#faq-content, #careers-content, #policy-content {
+    padding: 4rem 2rem;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-red);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+/* --- FAQ Specific Styling (Accordion) --- */
+.faq-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: var(--off-white);
+    color: var(--dark-text);
+    padding: 1rem 1.5rem;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #f0f0f0;
+}
+
+.accordion-header i {
+    transition: transform 0.3s;
+    color: var(--primary-red);
+}
+
+.accordion-header[aria-expanded="true"] {
+    background-color: var(--secondary-red);
+    color: var(--white);
+}
+
+.accordion-header[aria-expanded="true"] i {
+    transform: rotate(180deg);
+    color: var(--white);
+}
+
+.accordion-content {
+    padding: 0 1.5rem;
+    max-height: 0; /* Hidden by default (controlled by JS) */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: var(--white);
+}
+
+.accordion-content p {
+    padding: 1rem 0;
+    margin: 0;
+    border-top: 1px solid #eee;
+}
+
+/* --- Careers Specific Styling --- */
+.value-points {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.value-points > div {
+    flex: 1;
+    padding: 1rem;
+    border: 1px dashed var(--secondary-red);
+    border-radius: 8px;
+}
+
+.value-points h3 {
+    font-size: 1.2rem;
+    color: var(--primary-red);
+}
+
+.value-points i {
+    color: var(--secondary-red);
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+.job-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.job-list li {
+    padding: 1.5rem;
+    margin-bottom: 15px;
+    background-color: var(--off-white);
+    border-left: 5px solid var(--primary-red);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.job-list h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+/* --- Privacy Policy Specific Styling --- */
+.policy-list {
+    margin-top: 1rem;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.policy-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* --- Mobile Overrides for Supplementary Pages --- */
+@media (max-width: 768px) {
+    #policy-hero h1 {
+        font-size: 2rem;
+    }
+
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .value-points {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .accordion-header {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+}

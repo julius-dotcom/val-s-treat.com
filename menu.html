@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | VAL’S TREAT</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/menu-style.css"> 
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="VAL’S TREAT Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active-link">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <input type="search" placeholder="Search menu...">
+        </nav>
+    </header>
+
+    <section id="menu-hero">
+        <div class="menu-hero-content">
+            <strong><h1>Our Authentic Menu</h1></strong>
+            <strong><p>Experience the authentic taste of Nigeria. **Order instantly via WhatsApp!**</p></strong>
+            <a href="https://wa.me/2349012520128?text=Hello%2C%20I%20would%20like%20to%20place%20a%20full%20meal%20order." target="_blank" class="cta-button primary-cta whatsapp-btn">Start Your WhatsApp Order Now</a>
+        </div>
+    </section>
+    
+    <div id="filter-bar">
+        <p>Browse Categories:</p>
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="rice" class="filter-btn">Rice Dishes</button>
+        <button data-filter="soup" class="filter-btn">Soups & Swallows</button>
+        <button data-filter="protein" class="filter-btn">Proteins & Sides</button>
+        <button data-filter="drinks" class="filter-btn">Drinks</button>
+    </div>
+
+    <main id="menu-sections">
+        
+       <section class="menu-category" id="rice-dishes" data-category="rice">
+    <h2 class="category-title">🍚 Classic Rice Dishes</h2>
+    <p class="category-description">Perfectly prepared staples—rich, smoky, and satisfying.</p>
+    
+    <div class="menu-grid">
+        
+        <div class="menu-item has-image">
+            <img src="images/White Rice and Stew.jpg" alt="White Rice and Stew">
+            <div class="item-details">
+                <h3 class="item-name">White Rice and Stew</h3>
+                <p class="item-price">₦2,400</p>
+                <p class="item-desc">Fluffy white rice served with our rich, slow-cooked tomato and pepper stew.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20White%20Rice%20and%20Stew%20(₦2%2C400)." target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item has-image"> <img src="images/Jollof Rice.png" alt="Jollof Rice">
+            <div class="item-details">
+                <h3 class="item-name">Jollof Rice (Signature)</h3>
+                <p class="item-price">₦800</p>
+                <p class="item-desc">Smoky, perfectly seasoned rice cooked in a vibrant tomato base. A true classic.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Jollof%20Rice%20(₦800)." target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item has-image"> <img src="images/jollof pasta.png" alt="Jollof Pasta">
+            <div class="item-details">
+                <h3 class="item-name">Jollof Pasta</h3>
+                <p class="item-price">₦800</p>
+                <p class="item-desc">Delicious pasta tossed in rich, spicy tomato sauce for that classic Jollof flavour.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Jollof%20Pasta%20(₦800)." 
+                    target="_blank" 
+                    class="order-link">
+                    Order Now
+                </a>
+            </div>
+        </div>
+        
+        <div class="menu-item has-image"> <img src="images/native rice.png" alt="Native Rice">
+            <div class="item-details">
+                <h3 class="item-name">Native Rice</h3>
+                <p class="item-price">₦900</p>
+                <p class="item-desc">Traditional Nigerian palm oil rice cooked with peppers, spices, and tasty local flavours.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Native%20Rice%20(₦900)." 
+                    target="_blank" 
+                    class="order-link">
+                    Order Now
+                </a>
+            </div>
+        </div>
+        
+        <div class="menu-item has-image">
+            <img src="images/fried rice.png" alt="Fried Rice">
+            <div class="item-details">
+                <h3 class="item-name">Fried Rice</h3>
+                <p class="item-price">₦800</p>
+                <p class="item-desc">Tasty fried rice mixed with fresh vegetables.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Fried%20Rice%20(₦800)." 
+                    target="_blank" 
+                    class="order-link">
+                    Order Now
+                </a>
+            </div>
+        </div>
+
+    </div> </section>
+
+        <section class="menu-category alternate-bg" id="soups-swallows" data-category="soup">
+            <h2 class="category-title">🥣 Swallows & Soups</h2>
+            <p class="category-description">Rich, flavourful soups served with your perfect swallow companion.</p>
+
+            <div class="menu-grid">
+                
+                <div class="menu-item has-image">
+                    <img src="images/Rich Egusi Soup.jpg" alt="Egusi Soup"> 
+                    <div class="item-details">
+                        <h3 class="item-name">Egusi Soup</h3>
+                        <p class="item-price">₦800</p>
+                        <p class="item-desc">Rich melon seed soup, prepared with spinach and traditional spices.</p>
+                        <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Egusi%20Soup%20(₦800)." target="_blank" class="order-link">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="menu-item has-image">
+                    <img src="images/eba.png" alt="Eba">
+                    <div class="item-details">
+                        <h3 class="item-name">Eba (Swallow)</h3>
+                        <p class="item-price">₦800</p>
+                        <p class="item-desc">Smooth, well-mixed garri served hot. The perfect companion for Egusi.</p>
+                        <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Eba%20(₦800)." target="_blank" class="order-link">Order Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="menu-category" id="proteins-sides" data-category="protein">
+    <h2 class="category-title">🍗 Protein & Sides</h2>
+    <p class="category-description">Add a perfectly seasoned protein or delicious side to complete your meal.</p>
+
+    <div class="menu-grid">
+        
+        <div class="menu-item has-image"> <img src="images/Grilled Chicken.png" alt="Grilled Chicken"> <div class="item-details">
+                <h3 class="item-name">Grilled Chicken</h3>
+                <p class="item-price">₦2,000</p>
+                <p class="item-desc">Marinated and grilled chicken, tender and perfectly smoky.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Grilled%20Chicken%20(₦2%2C000)." target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item has-image"> <img src="images/Fried Fish.png" alt="Fried Fish"> <div class="item-details">
+                <h3 class="item-name">Fried Fish</h3>
+                <p class="item-price">₦2,000</p>
+                <p class="item-desc">Crispy fried fish, seasoned lightly and served hot.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Fried%20Fish%20(₦2%2C000)." target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+
+        <div class="menu-item has-image"> <img src="images/goat meat.png" alt="Goat Meat"> <div class="item-details">
+                <h3 class="item-name">Goat Meat</h3>
+                <p class="item-price">₦1,000</p>
+                <p class="item-desc">Tender cuts of goat meat, perfect addition to your stew or soup.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Goat%20Meat%20(₦1%2C000)." target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item has-image"> <img src="images/Fried Plantain (Dodo).png" alt="Fried Plantain (Dodo)"> <div class="item-details">
+                <h3 class="item-name">Fried Plantain (Dodo)</h3>
+                <p class="item-price">₦500</p>
+                <p class="item-desc">Sweet and crispy fried plantain—the ultimate side dish.</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Fried%20Plantain%20(₦500)." target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+      <section class="menu-category alternate-bg" id="drinks" data-category="drinks">
+    <h2 class="category-title">🥤 Drinks</h2>
+    <p class="category-description">Quench your thirst with our selection of chilled beverages.</p>
+
+    <div class="menu-grid">
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Coke</h3><p class="item-price">₦400</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Coke" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Fanta</h3><p class="item-price">₦400</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Fanta" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Malt</h3><p class="item-price">₦800</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Malt" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Water</h3><p class="item-price">₦500</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Water" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Spirit</h3><p class="item-price">₦400</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Spirit" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Hollandia</h3><p class="item-price">₦2000</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Hollandia" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Chivita</h3><p class="item-price">₦1500</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Chivita" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Exotic</h3><p class="item-price">₦2500</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Exotic" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Vitamilk</h3><p class="item-price">₦900</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Vitamilk" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Smoove</h3><p class="item-price">₦400</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Smoove" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Predator</h3><p class="item-price">₦1000</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Predator" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Fearless</h3><p class="item-price">₦800</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Fearless" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Zizou</h3><p class="item-price">₦400</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Zizou" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="menu-item simple-item">
+            <div class="item-details">
+                <h3 class="item-name">Caprison</h3><p class="item-price">₦400</p>
+                <a href="https://wa.me/2349012520128?text=I%20would%20like%20to%20order%20Caprison" target="_blank" class="order-link">Order Now</a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Contact Us</h4>
+                <p>Email: info@valstreat.com</p>
+                <p>Phone: +234 901 252 0128</p>
+                <p style="margin-top:1rem;">Mon - Sat: 8am - 9pm</p>
+                <p style="margin-top:1rem;">Closed on Sundays</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="https://www.instagram.com/vals_treat_/" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 VAL’S TREAT. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBar = document.getElementById('filter-bar');
+            if (filterBar) {
+                filterBar.addEventListener('click', (e) => {
+                    const btn = e.target.closest('.filter-btn');
+                    if (btn) {
+                        const filter = btn.getAttribute('data-filter');
+                        const sections = document.querySelectorAll('.menu-category');
+
+                        // Update active button state
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Map filters to sections (Updated mapping)
+                        const filterMap = {
+                            'rice': ['rice-dishes'],
+                            'soup': ['soups-swallows'],
+                            'protein': ['proteins-sides'],
+                            'drinks': ['drinks']
+                        };
+
+                        // Show/Hide sections
+                        sections.forEach(section => {
+                            const sectionId = section.id;
+                            if (filter === 'all' || (filterMap[filter] && filterMap[filter].includes(sectionId))) {
+                                section.style.display = 'block';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
