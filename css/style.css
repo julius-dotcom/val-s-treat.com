@@ -61,7 +61,21 @@ header .logo {
     width: 160px;
     height: 160px;
 }
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s ease-in-out;
+}
 
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
 nav {
     display: flex;
     align-items: center;
@@ -170,101 +184,7 @@ nav input[type="search"] {
     color: var(--white);
     margin-bottom: 1rem;
 }
-/* ========================================= */
-/* --- RESPONSIVE NAVBAR STYLES (CORRECTED) --- */
-/* ========================================= */
 
-/* 1. HIDE HAMBURGER BY DEFAULT (DESKTOP) - KEEP THIS */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--primary-red);
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* 2. MOBILE MEDIA QUERY (UPDATE THIS SECTION) */
-@media (max-width: 992px) {
-    /* SHOW HAMBURGER */
-    .hamburger {
-        display: block; 
-        z-index: 1001; 
-    }
-
-    /* RESTRUCTURE HEADER FOR MOBILE */
-    #main-header { /* Use the ID */
-        justify-content: space-between; 
-        padding: 1rem 1.5rem; 
-    }
-    
-    /* HIDE THE NAVIGATION BY DEFAULT */
-    #main-nav {
-        display: none;
-        flex-direction: column; 
-        position: fixed;
-        top: 0; 
-        right: 0;
-        width: 70%; 
-        height: 100%;
-        background-color: var(--dark-text); 
-        z-index: 1000;
-        padding-top: 5rem; 
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(100%); 
-    }
-
-    /* SHOW NAVIGATION WHEN 'open' CLASS IS ADDED BY JS */
-    #main-nav.open {
-        display: flex; /* Override display:none */
-        transform: translateX(0); 
-    }
-
-    /* MENU LIST STYLES */
-    #main-nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Add space above search form when menu is open */
-    #search-form {
-        width: 90%; /* Make search bar wider in the menu */
-        margin: 2rem auto; 
-    }
-    
-    /* Ensure search container is full width in the menu */
-    .search-container {
-        width: 100%;
-    }
-
-    /* Remove search bar margin on mobile when open */
-    #main-nav.open #search-form {
-        margin-left: 0; 
-    }
-
-    #main-nav ul li {
-        width: 100%;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    #main-nav ul li a {
-        padding: 1rem 1.5rem;
-        display: block;
-        color: var(--white); 
-        font-size: 1.1rem;
-    }
-    
-    #main-nav ul li a:hover,
-    #main-nav ul li a.active-link {
-        background-color: var(--primary-red);
-        color: var(--white);
-    }
-}
 /* Delivery & Comfort Section */
 #comfort-delivery {
     padding: 4rem 2rem;
@@ -1614,185 +1534,5 @@ footer ul li a {
     
     .map-container {
         padding: 0 1rem;
-    }
-}
-/* ========================================= */
-/* --- 4. SUPPLEMENTARY PAGES STYLING (FAQ, CAREERS, PRIVACY) --- */
-/* ========================================= */
-
-/* Hero Banner for Policy/Text pages */
-#policy-hero {
-    background: url('../images/menu\ background.png') center/cover no-repeat;
-    background-color: var(--primary-red);
-    background-blend-mode: multiply;
-    color: var(--white);
-    text-align: center;
-    padding: 6rem 2rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-#policy-hero h1 {
-    color: var(--white);
-    font-size: 3rem;
-    text-shadow: 1px 1px 3px #000;
-}
-
-/* Common Content Wrapper */
-#faq-content, #careers-content, #policy-content {
-    padding: 4rem 2rem;
-}
-
-.content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.section-heading {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--secondary-red);
-    display: inline-block;
-    padding-bottom: 5px;
-    font-size: 1.8rem;
-}
-
-/* --- FAQ Specific Styling (Accordion) --- */
-.faq-item {
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.accordion-header {
-    width: 100%;
-    background-color: var(--off-white);
-    color: var(--dark-text);
-    padding: 1rem 1.5rem;
-    border: none;
-    text-align: left;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-.accordion-header:hover {
-    background-color: #f0f0f0;
-}
-
-.accordion-header i {
-    transition: transform 0.3s;
-    color: var(--primary-red);
-}
-
-.accordion-header[aria-expanded="true"] {
-    background-color: var(--secondary-red);
-    color: var(--white);
-}
-
-.accordion-header[aria-expanded="true"] i {
-    transform: rotate(180deg);
-    color: var(--white);
-}
-
-.accordion-content {
-    padding: 0 1.5rem;
-    max-height: 0; /* Hidden by default (controlled by JS) */
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    background-color: var(--white);
-}
-
-.accordion-content p {
-    padding: 1rem 0;
-    margin: 0;
-    border-top: 1px solid #eee;
-}
-
-/* --- Careers Specific Styling --- */
-.value-points {
-    display: flex;
-    gap: 2rem;
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.value-points > div {
-    flex: 1;
-    padding: 1rem;
-    border: 1px dashed var(--secondary-red);
-    border-radius: 8px;
-}
-
-.value-points h3 {
-    font-size: 1.2rem;
-    color: var(--primary-red);
-}
-
-.value-points i {
-    color: var(--secondary-red);
-    font-size: 1.5rem;
-    margin-right: 8px;
-}
-
-.job-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
-}
-
-.job-list li {
-    padding: 1.5rem;
-    margin-bottom: 15px;
-    background-color: var(--off-white);
-    border-left: 5px solid var(--primary-red);
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.job-list h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark-text);
-}
-
-/* --- Privacy Policy Specific Styling --- */
-.policy-list {
-    margin-top: 1rem;
-    padding-left: 20px;
-    list-style: disc;
-}
-
-.policy-list li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-/* --- Mobile Overrides for Supplementary Pages --- */
-@media (max-width: 768px) {
-    #policy-hero h1 {
-        font-size: 2rem;
-    }
-
-    .content-wrapper {
-        padding: 1.5rem;
-    }
-    
-    .value-points {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .accordion-header {
-        font-size: 1rem;
-        padding: 0.8rem 1rem;
     }
 }
